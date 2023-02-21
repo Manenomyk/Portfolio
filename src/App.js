@@ -215,20 +215,20 @@ function App() {
 
             <rev.Fade left delay={1000}>
             <div id='github'>
-              <a  href="https://github.com/Manenomyk" style={{textDecoration:"none"}} target='_blank'><BsGithub /></a>
+              <a  href="https://github.com/Manenomyk" style={{textDecoration:"none", color:"black"}} target='_blank'><BsGithub /></a>
               
             </div>
             </rev.Fade>
 
             <rev.Fade left delay={1200}>
             <div id='gitlab'>
-              <a style={{textDecoration:"none"}} target='_blank' href="https://gitlab.com/Bahatimyk"><FaGitlab /></a>
+              <a style={{textDecoration:"none", color:"gray"}} target='_blank' href="https://gitlab.com/Bahatimyk"><FaGitlab /></a>
             </div>
             </rev.Fade>
 
             <rev.Fade left delay={1400}>
             <div id='gmail'>
-              <MdOutgoingMail />
+              <a style={{textDecoration:"none", color:"brown"}} href="mailto:manenomichael99@gmail.com" target="_blank"><MdOutgoingMail /></a>
             </div>
             </rev.Fade>
           </div>
@@ -539,31 +539,31 @@ function App() {
             
           <rev.Fade left delay={1000}>
             <p>
-              <GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+              <GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Responsive Designs  
             </p>
             </rev.Fade>
 
             <rev.Fade left delay={1200}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Designs using Adobe  
             </p>
             </rev.Fade>
 
             <rev.Fade left delay={1400}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Designs using Adobe XD 
             </p>
             </rev.Fade>
 
             <rev.Fade left delay={1600}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Designs using Figma tool
             </p>
             </rev.Fade>
 
             <rev.Fade left delay={1800}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               User Experience concideration
             </p>
             </rev.Fade>
@@ -584,31 +584,31 @@ function App() {
           <div>
 
             <rev.Zoom delay={1000}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Responsive Webpages  
             </p>
             </rev.Zoom>
 
             <rev.Zoom delay={1200}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Smooth user experience 
             </p>
             </rev.Zoom>
 
             <rev.Zoom delay={1400}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Outstanding landing pages  
             </p>
             </rev.Zoom>
 
             <rev.Zoom delay={1600}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Website deloyment and hosting
             </p>
             </rev.Zoom>
 
             <rev.Zoom delay={1800}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Website maintainance & testing
             </p>
             </rev.Zoom>
@@ -629,31 +629,31 @@ function App() {
 
           <div>
             <rev.Fade right delay={1000}>
-          <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+          <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Video editing
             </p>
             </rev.Fade>
 
             <rev.Fade right delay={1200}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               photo editing  
             </p>
             </rev.Fade>
 
             <rev.Fade right delay={1400}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Logo designs  
             </p>
             </rev.Fade>
 
             <rev.Fade right delay={1600}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Poster Designs 
             </p>
             </rev.Fade>
 
             <rev.Fade right delay={1800}>
-            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"green"}} />
+            <p><GoVerified style={{fontSize:"1.3rem", marginRight:"0.5rem", color:"#c2820b"}} />
               Branding and marketing
             </p>
             </rev.Fade>
@@ -1011,32 +1011,32 @@ function App() {
 
           <div className='footsocials d-flex justify-content-center'>
             <rev.Fade left delay={600}>
-            <div id='github'>
-              <BsLinkedin />
+            <div className='footin' id='github'>
+              <a style={{textDecoration:"none", color:"white"}} target="_blank" href="https://www.linkedin.com/in/michael-maneno-ab7325201/"><BsLinkedin /></a>
             </div>
             </rev.Fade>
 
             <rev.Fade left delay={800}>
-            <div id='github'>
-              <BsGithub />
+            <div className='foothub' id='github'>
+              <a style={{textDecoration:"none", color:"white"}} target="_blank" href="https://github.com/Manenomyk"><BsGithub /></a>
             </div>
             </rev.Fade>
 
             <rev.Fade delay={1000}>
-            <div id='gitlab'>
-              <FaGitlab />
+            <div className='footlab' id='gitlab'>
+              <a style={{textDecoration:"none", color:"white"}} target="_blank" href="https://gitlab.com/Bahatimyk"><FaGitlab /></a>
             </div>
             </rev.Fade>
 
             <rev.Fade right delay={800}>
-            <div id='gmail'>
-              <MdOutgoingMail />
+            <div className='footmail' id='gmail'>
+              <a style={{textDecoration:"none", color:"white"}} target="_blank" href="mailto:manenomichael99@gmail.com"><MdOutgoingMail /></a>
             </div>
             </rev.Fade>
 
             <rev.Fade right delay={600}>
-            <div>
-            < FaWhatsapp className='abouticon' />
+            <div className='footsap'>
+            <a style={{textDecoration:"none", color:"white"}} href="https://api.whatsapp.com/send?phone+254718776401">< FaWhatsapp className='abouticon' /></a>
             </div>
             </rev.Fade>
           </div>

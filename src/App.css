@@ -136,10 +136,10 @@ bottom: -15rem;
   color: black;
 }
 #expelink{
-  color: black;
+  color: #e6a631;
 }
 #servlink{
-  color: #7ad3ff;
+  color: #e6a631;
 }
 #portlink1{
    color: red;
@@ -327,7 +327,7 @@ background-color: black;
 }
 
 .gmail:hover{
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(119, 116, 116);
 /* color: black; */
 }
 
@@ -435,6 +435,8 @@ background-color: black;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }
+
+
 
 
   @media screen and (max-width: 1024px) {
