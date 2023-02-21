@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as main from 'react-bootstrap';
@@ -8,6 +8,7 @@ import { FaGitlab } from "react-icons/fa";
 import { MdOutgoingMail } from "react-icons/md";
 import baha from './Images/baha.jpeg';
 import mik from './Images/mik.jpeg';
+import fredor from './Images/finance.png';
 import { TfiMedallAlt } from "react-icons/tfi";
 import { GiSkills } from "react-icons/gi";
 import { BsCodeSlash } from "react-icons/bs";
@@ -16,12 +17,12 @@ import amal from './Images/dashboard.png';
 import { GoMailRead } from "react-icons/go";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
-import cv from './Images/resume.docx';
+import cv from './Images/ManenoMichael.pdf';
 import { FaHome } from "react-icons/fa";
 import { FaUserCircle } from "react-icons/fa";
-import { BiBookContent } from "react-icons/bi";
-import { RiServiceLine } from "react-icons/ri";
-import { RiProfileLine } from "react-icons/ri";
+import { BiCodeAlt } from "react-icons/bi";
+import { GoGear } from "react-icons/go";
+import { GrAchievement } from "react-icons/gr";
 import { TiContacts } from "react-icons/ti";
 import vengi from './Images/veng.png';
 import blue from './Images/blue.png';
@@ -29,8 +30,27 @@ import account from './Images/account.png';
 import Order from './Images/Order.jpg';
 import { GoVerified } from "react-icons/go";
 import * as rev from 'react-reveal';
+import { Link } from 'react-scroll';
+import emailjs from 'emailjs-com';
 
 function App() {
+
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_qk3ecbi', 'template_h2a286a', form.current, 'KFsuGcuTAtVQTcEYG')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+      e.target.reset();
+
+    };
+
   return (
 <div className='body'>
 <main.Container id='Home' className='container1'>
@@ -42,37 +62,100 @@ function App() {
           <div className='nav d-flex justify-content-center'>
           <rev.Fade left delay={1500}>
             <div>
-              <a id='homelink' href="#Home"><FaHome  style={{fontSize:"2rem"}} /></a>
+              <Link 
+                  to='Home'
+                  id='homelink'
+                  activeClass='active'
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  href="#Home"><FaHome  style={{fontSize:"2rem"}} />
+              </Link>
+
             </div>
             </rev.Fade>
 
             <rev.Fade left delay={1700}>
             <div>
-            <a id='aboutlink' href="#About"><FaUserCircle style={{fontSize:"2rem"}} /></a>
+
+            <Link 
+                  id='aboutlink' 
+                  to='About'
+                  activeClass='active'
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  href="#About"><FaUserCircle style={{fontSize:"2rem"}} />
+            </Link>
+            
             </div>
             </rev.Fade>
 
             <rev.Fade left delay={1900}>
             <div>
-            <a id='expelink' href="#Experience"><BiBookContent style={{fontSize:"2rem"}} /></a>
+            <Link 
+                  id='expelink'
+                  to='Experience'
+                  activeClass='active'
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  href="#Experience"><BiCodeAlt style={{fontSize:"2rem"}} />
+            </Link>
             </div>
             </rev.Fade>
 
             <rev.Fade right delay={1900}>
             <div>
-            <a id='servlink' href="#Services"><RiServiceLine style={{fontSize:"2rem"}} /></a>
+
+            <Link 
+                  id='servlink' 
+                  to='Services'
+                  activeClass='active'
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  href="#Services"><GoGear style={{fontSize:"2rem"}} />
+            </Link>
+
             </div>
             </rev.Fade>
             
             <rev.Fade right delay={1700}>
             <div>
-            <a id='portlink' href="#Portfolio"><RiProfileLine style={{fontSize:"2rem"}}/></a>
+
+            <Link 
+                  id='portlink1'
+                  to='Portfolio'
+                  activeClass='active'
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500} 
+                  href="#Portfolio"><GrAchievement style={{fontSize:"2rem"}}/>
+            </Link>
+
             </div>
             </rev.Fade>
 
             <rev.Fade right delay={1500}>
             <div>
-            <a id='contlink' href="#Contact"><TiContacts style={{fontSize:"2rem"}} /></a>
+
+            <Link 
+                    id='contlink' 
+                    to='Contact'
+                    activeClass='active'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    href="#Contact"><TiContacts style={{fontSize:"2rem"}} />
+            </Link>
+
             </div>
             </rev.Fade>
 
@@ -104,7 +187,15 @@ function App() {
 
             <div>
             <rev.Fade right>
-              <button className='btn btn-danger'>Reach out</button>
+              <Link
+                  to='Contact'
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  href="#Contact">
+                  <button className='btn btn-danger'>Reach out</button>
+               </Link>
             </rev.Fade>
             </div>
 
@@ -118,19 +209,20 @@ function App() {
           <div id='icons' >
             <rev.Fade left delay={800}>
             <div id='linkedin'>
-              <BsLinkedin />
+              <a style={{textDecoration:"none"}} target='_blank' href="https://www.linkedin.com/in/michael-maneno-ab7325201/"><BsLinkedin /></a>
             </div>
             </rev.Fade>
 
             <rev.Fade left delay={1000}>
             <div id='github'>
-              <BsGithub />
+              <a  href="https://github.com/Manenomyk" style={{textDecoration:"none"}} target='_blank'><BsGithub /></a>
+              
             </div>
             </rev.Fade>
 
             <rev.Fade left delay={1200}>
             <div id='gitlab'>
-              <FaGitlab />
+              <a style={{textDecoration:"none"}} target='_blank' href="https://gitlab.com/Bahatimyk"><FaGitlab /></a>
             </div>
             </rev.Fade>
 
@@ -158,7 +250,15 @@ function App() {
 
           <div id='direction'>
           
-            <a id='scrol' href="#Quick"><rev.Fade right delay={1100}>scroll down</rev.Fade></a>
+            <Link 
+                    id='scrol' 
+                    to='Quick'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    href="#Quick"><rev.Fade right delay={1100}>scroll down</rev.Fade>
+            </Link>
             
           </div>
          
@@ -201,7 +301,7 @@ function App() {
                   < TfiMedallAlt className='text-light abouticon' />
 
                   <h4 className='text-warning'>Experience</h4>
-                  <p style={{color:"white"}}>2 years of practical experience</p>
+                  <p style={{color:"white"}}>Over 2 years of practical experience</p>
               </div>
               </rev.Zoom>
             </main.Col>
@@ -212,7 +312,7 @@ function App() {
                   <GiSkills className='abouticon' />
 
                   <h4 className='text-danger'>Skills</h4>
-                  <p>2 years of practical experience</p>
+                  <p>Mastery of over 4 languages</p>
               </div>
             </rev.Zoom>
             </main.Col>
@@ -222,7 +322,7 @@ function App() {
                   <BsCodeSlash style={{color:"white"}} className='abouticon' />
 
                   <h4 style={{color:"black"}}>Projects</h4>
-                  <p style={{color:"white"}}>2 years of practical experience</p>
+                  <p style={{color:"white"}}>Over 7 real time projects</p>
               </div>
               </rev.Zoom>
             </main.Col>
@@ -232,32 +332,21 @@ function App() {
             <main.Col lg={12}>
               <rev.Fade right delay={1200}>
               <p>
-              Compiled successfully!
-              webpack compiled successfully
-              Compiling...
-              Compiled successfully!
-              webpack compiled successfully
-              Compiling...
-              Compiled successfully!
-              webpack compiled successfully
-              Compiling...
-              Compiled successfully!
-              webpack compiled successfully
-              Compiling...
-              Compiled successfully!
-              webpack compiled successfully
-              Compiling...
-              Compiled successfully!
-              webpack compiled successfully
-              Compiling...
-              Compiled successfully!
-              webpack compiled successfully
+              Hi, <br />
+              my name is Michael Bahati Maneno a highly competent
+               IT professional with a proven track record in designing websites, 
+               networking and managing databases. I have strong technical skills 
+               as well as excellent interpersonal skills, enabling me to interact
+               with a wide range of clients. I am eager to be challenged in order
+               to grow and further improve my IT skills. My greatest passion is
+               in life is using my technical know-how to benefit other people
+              and organizations.
 
               </p>
               </rev.Fade>
 
               <rev.Fade bottom delay={1400}>
-              <button className='btn btn-danger'>Contact Me</button>
+              <a href="#Contact" ><button className='btn btn-danger'>Contact Me</button></a>
               </rev.Fade>
             </main.Col>
           </main.Row>
@@ -603,7 +692,7 @@ function App() {
                           <h5 className='text-center'>Amal Investment Platform</h5>
                           <div id='topbtns1' className='d-flex '>
                         <div >
-                          <button className='cv'>Gitlab</button>
+                        <a target='_blank' href="https://gitlab.com/Bahatimyk"><button className='cv'>Gitlab</button></a>
                         </div>
                         <div>
                           <button className='talk'>Live Demo</button>
@@ -629,7 +718,7 @@ function App() {
                           <h5 className='text-center'>FYX platform</h5>
                           <div id='topbtns1' className='d-flex '>
                         <div >
-                          <button className='cv'>Gitlab</button>
+                        <a target='_blank' href="https://gitlab.com/Bahatimyk"><button className='cv'>Gitlab</button></a>
                         </div>
                         <div>
                           <button className='talk'>Live Demo</button>
@@ -655,7 +744,7 @@ function App() {
                               <h5 className='text-center'>Accounts Manager System</h5>
                               <div id='topbtns1' className='d-flex '>
                             <div >
-                              <button className='cv'>Gitlab</button>
+                            <a target='_blank' href="https://gitlab.com/Bahatimyk"><button className='cv'>Gitlab</button></a>
                             </div>
                             <div>
                               <button className='talk'>Live Demo</button>
@@ -681,7 +770,7 @@ function App() {
                             <h5 className='text-center'>Blue Shoulder Resort Website</h5>
                             <div id='topbtns1' className='d-flex '>
                           <div >
-                            <button className='cv'>Gitlab</button>
+                          <a target='_blank' href="https://gitlab.com/Bahatimyk"><button className='cv'>Gitlab</button></a>
                           </div>
                           <div>
                             <button className='talk'>Live Demo</button>
@@ -692,7 +781,7 @@ function App() {
                       </main.Col>
                   </main.Carousel.Item>
                   <main.Carousel.Item>
-                  <main.Col className='mx-auto mb-3'  lg={6}>
+                  <main.Col className='mx-auto mb-3' lg={6}>
                         <main.Card>
                           <main.Card.Title>
                           <main.Image
@@ -707,7 +796,36 @@ function App() {
                             <h5 className='text-center'>Vengi Sacco System</h5>
                             <div id='topbtns1' className='d-flex '>
                           <div >
-                            <button className='cv'>Gitlab</button>
+                            
+                            <a target='_blank' href="https://gitlab.com/Bahatimyk"><button className='cv'>Gitlab</button></a>
+                          </div>
+                          <div>
+                            <button className='talk'>Live Demo</button>
+                          </div>
+                        </div>
+                          </main.Card.Body>
+                        </main.Card>
+                      </main.Col>
+                  </main.Carousel.Item>
+
+                  <main.Carousel.Item>
+                  <main.Col className='mx-auto mb-3' lg={6}>
+                        <main.Card>
+                          <main.Card.Title>
+                          <main.Image
+                                    className="d-block w-100"
+                                    src={fredor}
+                                    style={{height:"45vh"}}
+                                    alt="First slide"
+                                    fluid
+                                    />
+                          </main.Card.Title>
+                          <main.Card.Body>
+                            <h5 className='text-center'>Fredor Investment financial system</h5>
+                            <div id='topbtns1' className='d-flex '>
+                          <div >
+                            
+                            <a target='_blank' href="https://gitlab.com/Bahatimyk"  ><button className='cv'>Gitlab</button></a>
                           </div>
                           <div>
                             <button className='talk'>Live Demo</button>
@@ -745,7 +863,8 @@ function App() {
 
                   <h6 style={{color:"orange"}}><b>EMAIL</b></h6>
                   <p id='emai' style={{color:"white"}}>manenomichael99@gmail.com</p>
-                  <p className='send'>Send a message</p>
+                  <a className='send' href="mailto:manenomichael99@gmail.com" target='_blank'>Send a message</a>
+                  {/* <p className='send'>Send a message</p> */}
               </div>
            </rev.Fade>
 
@@ -755,7 +874,8 @@ function App() {
 
                   <h6 style={{color:"RED"}}><b>Linkedin</b></h6>
                   <p style={{color:"black"}}>2 years of practical experience</p>
-                  <p className='send1'>Send a message</p>
+                  <a className='send1' href="https://github.com/Manenomyk" target='_blank'>Send a message</a>
+                  {/* <p className='send1'>Send a message</p> */}
 
               </div>
               </rev.Fade>
@@ -766,37 +886,40 @@ function App() {
 
                   <h6><b>Whatsup</b></h6>
                   <p style={{color:"white"}}>+254 718 776 401</p>
-                  <p className='send2'>Send a message</p>
+                  <a className='send2' href="https://api.whatsapp.com/send?phone+254718776401" target='_blank'>Send a message</a>
+                  {/* <p className='send2'>Send a message</p> */}
 
               </div>
               </rev.Fade>
         </main.Col>
         
         <main.Col lg={7}>
-
-        <rev.Fade right delay={1000}>
+      <form ref={form} onSubmit={sendEmail}>
+      <rev.Fade right delay={1000}>
           <div>
-            <input className='form form-control shadow-none mb-3 pt-3 pb-3' placeholder='Your Name' type="text" />
+            <input name='name' className='form form-control shadow-none mb-3 pt-3 pb-3' placeholder='Your Name' type="text" required/>
           </div>
           </rev.Fade>
 
           <rev.Fade right delay={1200}>
           <div>
-            <input className='form form-control shadow-none mb-3 pt-3 pb-3 ' placeholder='Your Email Address' type="text" />
+            <input name='email' type='email' className='form form-control shadow-none mb-3 pt-3 pb-3 ' placeholder='Your Email Address' required />
           </div>
           </rev.Fade>
 
           <rev.Fade right delay={1400}>
           <div>
-            <textarea className='form form-control shadow-none mb-3' placeholder='Your Messsage' rows="6" />
+            <textarea name='message' className='form form-control shadow-none mb-3' placeholder='Your Messsage' rows="6" required />
           </div>
           </rev.Fade>
 
         <rev.Zoom delay={1600}>
           <div>
-            <button className='btn btn-danger'>Messsage</button>
+            <button type='submit' className='btn btn-danger'>Messsage</button>
           </div>
           </rev.Zoom>
+      </form>
+        
         </main.Col>
       </main.Row>
     </main.Container>
@@ -811,29 +934,77 @@ function App() {
         <main.Col className='mx-auto' lg={12}>
           <div className='footlinks d-flex justify-content-center'>
             <rev.Fade letf delay={600}>
-              <a id='scrol1' href="#Home"><p>Home</p></a> 
+              <Link 
+                    id='scrol1' 
+                    to='Home'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    href="#Home"><p>Home</p>
+              </Link> 
             </rev.Fade>
 
             <rev.Fade left delay={800}>     
-            <a id='scrol1' href="#About"><p>About</p></a>
+            <Link 
+                    id='scrol1' 
+                    to='About'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    href="#About"><p>About</p></Link>
             </rev.Fade>
 
             <rev.Fade left delay={1000}>
-            <a id='scrol1' href="#Experience"><p>Experience</p></a>
+            <Link 
+                  id='scrol1'  
+                  to='Experience'
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  href="#Experience"><p>Experience</p>
+                    
+            </Link>
             </rev.Fade>
 
             <rev.Fade right delay={1000}>
-            <a id='scrol1' href="#Services"><p>Services</p></a>
+            <Link 
+                    id='scrol1' 
+                    to='Services'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500}
+                    href="#Services"><p>Services</p>
+            </Link>
             
             </rev.Fade>
 
             <rev.Fade right delay={800}>
-            <a id='scrol1' href="#Portfolio"><p>Portfolio</p></a>
+            <Link 
+                    id='scrol1'
+                    to='Portfolio'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500} 
+                    href="#Portfolio"><p>Portfolio</p>
+            </Link>
             
             </rev.Fade>
 
             <rev.Fade right delay={600}>
-            <a id='scrol1' href="#Contact"><p>Contact</p></a>
+            <Link 
+                    id='scrol1' 
+                    to='Contact'
+                    spy={true}
+                    smooth={true}
+                    offset={-80}
+                    duration={500} 
+                    href="#Contact"><p>Contact</p>
+            </Link>
             
             </rev.Fade>
           </div>

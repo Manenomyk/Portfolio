@@ -7,10 +7,8 @@
    background-color: #d4effd;
    font-family: 'Nunito Sans', sans-serif;
    font-family: 'Roboto', sans-serif;
-}
-
-html{
-  scroll-behavior: smooth;
+   scroll-behavior: smooth;
+   
 }
 
 ::-webkit-scrollbar{
@@ -55,9 +53,9 @@ html{
   padding-bottom: 2rem;
 }
 #icons{
-position: absolute;
+position: relative;
 float: left;
-bottom: 50px;
+bottom: -15rem;
 }
 #direction{
   position: relative;
@@ -138,13 +136,13 @@ bottom: 50px;
   color: black;
 }
 #expelink{
-  color: #7ad3ff;
+  color: black;
 }
 #servlink{
   color: #7ad3ff;
 }
-#portlink{
-   color: black;
+#portlink1{
+   color: red;
 }
 #contlink{
   color: white;
@@ -342,13 +340,14 @@ background-color: black;
 }
 
 .send{
-  color: maroon;
+  color: white;
   border: 1px solid rgb(0, 0, 0);
   border-bottom: none;
   border-left: none;
   border-right: none;
   cursor: pointer;
   transition: all 400ms ease;
+  text-decoration: none;
 }
 .send1{
   color: maroon;
@@ -358,15 +357,17 @@ background-color: black;
   border-right: none;
   cursor: pointer;
   transition: all 400ms ease;
+  text-decoration: none;
 }
 .send2{
-  color: maroon;
+  color: black;
   border: 1px solid rgb(0, 0, 0);
   border-bottom: none;
   border-left: none;
   border-right: none;
   cursor: pointer;
   transition: all 400ms ease;
+  text-decoration: none;
 }
 /* .send:hover{
   color: rgb(187, 186, 186);
