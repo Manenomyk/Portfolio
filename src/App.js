@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import React, {useRef, useState} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as main from 'react-bootstrap';
@@ -23,7 +23,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { BiCodeAlt } from "react-icons/bi";
 import { GoGear } from "react-icons/go";
 import { GrAchievement } from "react-icons/gr";
-import { TiContacts } from "react-icons/ti";
+import { BiChat } from "react-icons/bi";
 import vengi from './Images/veng.png';
 import blue from './Images/blue.png';
 import account from './Images/account.png';
@@ -32,9 +32,11 @@ import { GoVerified } from "react-icons/go";
 import * as rev from 'react-reveal';
 import { Link } from 'react-scroll';
 import emailjs from 'emailjs-com';
+import { Helmet } from 'react-helmet';
 
 function App() {
 
+  const [successResponce,setSuccessResponce] =useState('');
 
   const form = useRef();
 
@@ -44,15 +46,43 @@ function App() {
     emailjs.sendForm('service_qk3ecbi', 'template_h2a286a', form.current, 'KFsuGcuTAtVQTcEYG')
       .then((result) => {
           console.log(result.text);
+
+         
       }, (error) => {
           console.log(error.text);
       });
+
+
+
       e.target.reset();
+      setSuccessResponce("Message sent successfully")
+      setTimeout(()=>{
+        setSuccessResponce('')
+      }, 2000);
 
     };
 
   return (
 <div className='body'>
+
+<div style={{marginLeft:"45%",marginTop:"15%",position:"fixed", zIndex:"2"}}>
+  {successResponce && (
+    <div style={{color:'white', fontSize:'16px',width:"17vw",background:"#28a745",
+    borderRadius:"15px", paddingTop:'15px',paddingBottom:'15px',paddingLeft:"6%",
+    border:"1px solid lightgray", opacity:"0.7", transition:'0.5'}}>
+      {successResponce}
+    </div>
+  )}
+</div>
+
+          <Helmet>
+                <meta charSet="utf-8" />
+                <title>#BahatiCodes</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+                <meta name="description" content="Awesome portfolio you need to checkout" />
+            </Helmet>
+
+
 <main.Container id='Home' className='container1'>
       <main.Row className='bg-dark'>
         
@@ -153,7 +183,7 @@ function App() {
                     smooth={true}
                     offset={-80}
                     duration={500}
-                    href="#Contact"><TiContacts style={{fontSize:"2rem"}} />
+                    href="#Contact"><BiChat style={{fontSize:"2rem"}} />
             </Link>
 
             </div>
@@ -332,13 +362,13 @@ function App() {
             <main.Col lg={12}>
               <rev.Fade right delay={1200}>
               <p>
-              Hi, <br />
-              my name is Michael Bahati Maneno a highly competent
+              Hi and welcome, <br />
+               this is Michael Bahati Maneno a highly competent
                IT professional with a proven track record in designing websites, 
                networking and managing databases. I have strong technical skills 
                as well as excellent interpersonal skills, enabling me to interact
                with a wide range of clients. I am eager to be challenged in order
-               to grow and further improve my IT skills. My greatest passion is
+               to grow and further improve my IT skills. My greatest passion
                in life is using my technical know-how to benefit other people
               and organizations.
 
@@ -1036,7 +1066,7 @@ function App() {
 
             <rev.Fade right delay={600}>
             <div className='footsap'>
-            <a style={{textDecoration:"none", color:"white"}} href="https://api.whatsapp.com/send?phone+254718776401">< FaWhatsapp className='abouticon' /></a>
+            <a style={{textDecoration:"none", color:"white"}} target="_blank" href="https://api.whatsapp.com/send?phone+254718776401">< FaWhatsapp className='abouticon' /></a>
             </div>
             </rev.Fade>
           </div>
