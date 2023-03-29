@@ -75,12 +75,7 @@ function App() {
   )}
 </div>
 
-          <Helmet>
-                <meta charSet="utf-8" />
-                <title>#BahatiCodes</title>
-                <link rel="canonical" href="http://mysite.com/example" />
-                <meta name="description" content="Awesome portfolio you need to checkout" />
-            </Helmet>
+          n
 
 
 <main.Container id='Home' className='container1'>
